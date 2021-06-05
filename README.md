@@ -27,3 +27,38 @@ name       | Nome completo do usuário
 cpf        | CPF do usuário
 email      | Email
 password   | Senha
+
+## Recurso Imóveis
+##### Cabeçalho das requisições:
+Parâmetro | Valor
+:-------   | :------
+x-access-token      | Token gerado
+
+## GET Listar Imóveis
+/properties
+## GET Listar um Imóvel
+/properties/{id}
+## POST Cadastrar um Imóvel
+/properties
+##### Corpo da requisição: 
+Atributos  | Descrição
+:-------   | :------
+cep        | CEP do endereço do imóvel
+number     | Número do imóvel
+complement | Complemento do endereço
+rentValue  | Valor do aluguel do imóvel
+rooms      | Número de quartos
+
+## PUT Atualizar um Imóvel
+/properties/{id}
+##### Corpo da requisição: 
+Atributos  | Descrição
+:-------   | :------
+cep        | CEP do endereço do imóvel
+number     | Número do imóvel
+complement | Complemento do endereço
+rentValue  | Valor do aluguel do imóvel
+rooms      | Número de quartos
+
+## DELETE Excluir um Imóvel
+/properties/{id}
