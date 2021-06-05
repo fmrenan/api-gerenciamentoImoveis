@@ -1,4 +1,5 @@
 const User = require('../models/User');
+const pwdCrypt = require('../utils/pwdCrypt');
 
 module.exports = {
   async findAll(req, res){
@@ -19,11 +20,13 @@ module.exports = {
 
     const { name, cpf, email, password } = req.body;
 
+    const hashedPassword = pwdCrypt.generateHash(password);
+
     const user = await User.create({
       name,
       cpf,
       email,
-      password
+      password: hashedPassword
     })
 
     return res.status(201).json(user);
@@ -32,10 +35,13 @@ module.exports = {
   async update(req, res){
     const {user_id} = req.params;
     const newUser = req.body;
+    
+    if(newUser.password){
+      newUser.password = pwdCrypt.generateHash(newUser.password);
+    }
 
     const user = await User.findByIdAndUpdate(user_id, newUser, {new: true});
-    user.save();
-
+    
     return res.status(200).json(user);
   },
 

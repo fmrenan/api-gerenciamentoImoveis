@@ -10,6 +10,7 @@ mongoose.connect("mongodb+srv://renan:renan@cluster0.8styg.mongodb.net/propertie
     {
         useNewUrlParser: true,
         useUnifiedTopology: true,
+        useFindAndModify: false
     }
 );
 
