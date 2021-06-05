@@ -2,7 +2,7 @@
 API RESTful para uma plataforma simples de gerenciamento de imóveis.
 
 ## Endpoint
-O endpoint de conexão com a API REST está no endereço: http://localhost:3333/
+O endpoint de conexão com a API REST está no endereço: https://api-gerenciamento-imoveis.herokuapp.com
 
 ## Recursos disponíveis
 Existem os seguintes recursos que poderão ser acessados pelos métodos GET, POST, PUT e DELETE:<br>
