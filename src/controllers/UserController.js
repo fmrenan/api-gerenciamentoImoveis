@@ -45,6 +45,6 @@ module.exports = {
     
     await User.findByIdAndDelete(user_id);
 
-    return res.status(204).json(user);
+    return res.status(204).json();
   },
 }    
